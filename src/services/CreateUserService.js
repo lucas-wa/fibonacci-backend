@@ -16,7 +16,7 @@ module.exports = class CretaeUserService {
 
         if(userAlredyExists) throw new Error("User already exits");
 
-       const passwordHash = await hash(password, 8);
+       const passwordHash = await hash(password, Math.random());
 
 
         const user = await prisma.user.create({
