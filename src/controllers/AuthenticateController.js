@@ -10,6 +10,9 @@ module.exports = class AuthenticateController {
         const service = new authenticateService();
         const user = await service.authenticate({email, password});
 
-        return res.json(user);
+        return res.status(200).json({
+            success:true,
+            redirectUrl: "/dashboard"
+        })
     }
 }

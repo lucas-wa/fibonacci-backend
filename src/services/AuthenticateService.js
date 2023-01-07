@@ -10,12 +10,14 @@ module.exports = class AuthenticateService {
             }
         });
 
+        if(!user) throw new Error("Email or password is wrong");
+
 
         const verifyPass = await compare(password, user.password);
 
 
         
-        if(!verifyPass) throw new Error("Email or password is wrong!"); 
+        if(!verifyPass) throw new Error("Email or password is wrong"); 
 
         return user;
     }

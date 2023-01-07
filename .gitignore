@@ -2,3 +2,6 @@
 .env
 .gitignore
 node_modules
+migrations
+dev.db
+README.md
